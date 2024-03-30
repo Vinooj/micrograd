@@ -51,11 +51,11 @@ class Value:
 
         return out
 
-    def backward(self):
+    def backward(self, root=True):
         # go one variable at a time and apply the chain rule to get its gradient
-        self.grad = 1
+        if root: self.grad = 1
         self._backward()
-        [child._backward() for child in self._prev]
+        [child.backward(False) for child in self._prev]
 
     def __neg__(self): # -self
         return self * -1
