@@ -68,4 +68,4 @@ class MLP(Module):
         return [p for layer in self.layers for p in layer.parameters()]
 
     def __repr__(self):
-        return f"MLPO of [{', '.join(str(layer) for layer in self.layers)}]"
+        return f"MLP of [{', '.join(str(layer) for layer in self.layers)}]"
