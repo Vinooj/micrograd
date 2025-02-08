@@ -23,7 +23,7 @@ class Neuron(Module):
         
         if self.use_tanh:
             # If specified to use a Tanh activation function
-            return act.tanh()
+            return act.tanh() if self.nonlin else act
         
         # By default uses a relu activation function.
         # Maybe we can extend this dynamically to pick activation
